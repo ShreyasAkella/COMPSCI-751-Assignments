@@ -1,0 +1,167 @@
+package edu.uwm.cs351;
+
+/**
+ * This class implements the robot interface using a small number of string variables
+ * It has room for 2 arms, 2 legs, and 2 other parts
+ * Don't store any non-arms in arm1 or arm2, or non-legs in leg1 or leg2
+ * Don't store any arms or legs in other1 or other2
+ * Remember that the strings for arms and legs are defined by a constant in Robot.java
+ * Note: addPart CAN result in adding an arm or a leg depending on the string passed
+ */
+
+public class VariablesRobot implements Robot{
+
+	private String arm1;
+	private String arm2;
+	private String leg1;
+	private String leg2;
+	private String other1;
+	private String other2;
+	
+	@Override
+	public boolean addPart(String s) {
+		if(s == null) throw new IllegalArgumentException();
+		if(s.equalsIgnoreCase(ARM) &&(arm1.equals(null)||arm2.equals(null)))
+		{
+			if(arm1.equals(null))
+				arm1=s;
+			else
+				arm2=s;
+			return true;
+			
+		}
+		else if(s.equalsIgnoreCase(LEG) &&(leg1.equals(null)||leg2.equals(null)))
+		{
+			if(leg1.equals(null))
+				leg1=s;
+			else
+				leg2=s;
+			return true;
+		}
+		
+		else if((other1.equals(null)||other2.equals(null)))
+		{
+			if(other1.equals(null))
+				other1=s;
+			else
+				other2=s;
+			return true;
+			
+		}
+		return false;
+		
+	}
+
+	@Override
+	public boolean addArm() {
+		//TODO
+		if(arm1==null&&arm2!=null) { 
+			arm1=ARM;
+			return true;}
+		else {
+			arm2=ARM;
+		return true;}
+		
+		//return false;
+	}
+
+	@Override
+	public boolean addLeg() {
+		//TODO
+		if(leg1==null&&leg2!=null) { 
+			leg1=LEG;
+			return true;}
+		else {
+			leg2=LEG;
+		return true;}
+		//return false;
+	}
+
+	@Override
+	public boolean removePart(String s) {
+		//TODO
+		if(s==ARM || s==LEG || s==other1 || s==other2) {
+			s=null;
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean removeArm() {
+		//TODO
+		if(arm1==null&&arm2!=null) {
+			arm2=null;
+			return true;
+		}
+		else if(arm1!=null&&arm2==null) {
+			arm1=null;
+			return true;
+		}
+		
+		return false;
+	}
+
+	@Override
+	public boolean removeLeg() {
+		//TODO
+		if(leg1==null&&leg2!=null) {
+			leg2=null;
+			return true;
+		}
+		else if(leg1!=null&&leg2==null) {
+			leg1=null;}
+		return false;
+	}
+
+	@Override
+	public boolean removeAllArms() {
+		boolean changed = false;
+		//TODO
+		if(arm1!=null&&arm2==null) {
+			arm1=null;
+			changed=true; 
+		}
+		else if(arm1==null&&arm2!=null) {
+			arm2=null;
+			changed=true;
+		}
+		else if(arm1!=null&&arm2!=null) {
+			arm1=null;
+			arm2=null;
+			changed=true;
+		}
+		
+		return changed;
+	}
+
+	@Override
+	public boolean removeAllLegs() {
+		boolean changed = false;
+		//TODO
+		if(leg1!=null&&leg2==null) {
+			leg1=null;
+			changed=true; 
+		}
+		else if(leg1==null&&leg2!=null) {
+			leg2=null;
+			changed=true;
+		}
+		else if(leg1!=null&&leg2!=null) {
+			leg1=null;
+			leg2=null;
+			changed=true;
+		}
+		
+		return changed;
+	}
+
+	@Override
+	public boolean removeAllParts() {
+		boolean changed = false;
+		//TODO
+	
+		return changed;
+	}
+
+}

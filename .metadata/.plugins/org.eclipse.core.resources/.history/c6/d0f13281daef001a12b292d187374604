@@ -1,0 +1,78 @@
+package edu.uwm.cs351;
+
+/**
+ * This class implements the robot interface using a small number of string variables
+ * It has room for 2 arms, 2 legs, and 2 other parts
+ * Don't store any non-arms in arm1 or arm2, or non-legs in leg1 or leg2
+ * Don't store any arms or legs in other1 or other2
+ * Remember that the strings for arms and legs are defined by a constant in Robot.java
+ * Note: addPart CAN result in adding an arm or a leg depending on the string passed
+ */
+
+public class VariablesRobot implements Robot{
+
+	private String arm1;
+	private String arm2;
+	private String leg1;
+	private String leg2;
+	private String other1;
+	private String other2;
+	
+	@Override
+	public boolean addPart(String s) {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean addArm() {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean addLeg() {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean removePart(String s) {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean removeArm() {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean removeLeg() {
+		//TODO
+		return false;
+	}
+
+	@Override
+	public boolean removeAllArms() {
+		boolean changed = false;
+		//TODO
+		return changed;
+	}
+
+	@Override
+	public boolean removeAllLegs() {
+		boolean changed = false;
+		//TODO
+		return changed;
+	}
+
+	@Override
+	public boolean removeAllParts() {
+		boolean changed = false;
+		//TODO
+		return changed;
+	}
+
+}
